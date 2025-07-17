@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agostina Estética</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Carrusel simple
+    let current = 0;
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.carousel-slide');
+      slides.forEach((slide, i) => {
+        slide.classList.add('hidden');
+        if (i === index) slide.classList.remove('hidden');
+      });
+    }
+
+    function nextSlide() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    setInterval(nextSlide, 3000);
+    window.onload = () => showSlide(0);
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- 🧭 Barra de navegación -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-pink-600">Agostina Estética</h1>
+      <ul class="flex gap-4 text-sm md:text-base">
+        <li><a href="index.html" class="hover:text-pink-600">Inicio</a></li>
+        <li><a href="public/servicios.html" class="hover:text-pink-600">Servicios</a></li>
+        <li><a href="public/promociones.html" class="hover:text-pink-600">Promociones</a></li>
+        <li><a href="public/precios.html" class="hover:text-pink-600">Precios</a></li>
+        <li><a href="public/reserva.html" class="hover:text-pink-600">Reservas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🎞 Presentación con carrusel -->
+  <section class="bg-pink-100">
+    <div class="relative overflow-hidden h-[300px] md:h-[450px]">
+      <img src="img/slide1.jpg" class="carousel-slide absolute w-full h-full object-cover hidden" />
+      <img src="img/slide2.jpg" class="carousel-slide absolute w-full h-full object-cover hidden" />
+      <img src="img/slide3.jpg" class="carousel-slide absolute w-full h-full object-cover hidden" />
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-center p-4">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold">Belleza, bienestar y relajación</h2>
+          <p class="mt-2 md:text-lg">Conocé todos nuestros servicios y reservá tu turno online</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Podés agregar aquí un footer si querés -->
+  <footer class="bg-white text-center py-4 mt-8 text-sm text-gray-500">
+    © 2025 Agostina Estética. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
