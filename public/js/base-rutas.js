@@ -1,6 +1,6 @@
 // base-rutas.js
 const esLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-const BASE_URL = esLocal ? "/estetica/public" : "/Agostina-Estetica/public";
+const BASE_URL = esLocal ? "/estetica/public" : "/Agostina-Estetica/";
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("a[data-base], link[data-base], script[data-base]").forEach(el => {
